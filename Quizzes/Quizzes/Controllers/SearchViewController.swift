@@ -22,12 +22,12 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         navigationItem.title = "Search Quizes"
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         view.addSubview(searchView)
         getQuizzes()
         searchView.searchQuizCollection.dataSource = self
         searchView.searchQuizCollection.delegate = self
+        navigationItem.title = "Search Quizes"
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         
     }

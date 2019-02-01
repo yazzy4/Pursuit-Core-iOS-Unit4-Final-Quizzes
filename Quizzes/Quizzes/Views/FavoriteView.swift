@@ -12,7 +12,7 @@ class FavoriteView: UIView {
 
     public lazy var myQuizView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 50, height: 500)
+        layout.itemSize = CGSize.init(width: 20, height: 300)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         layout.scrollDirection = .horizontal
         
@@ -46,7 +46,8 @@ class FavoriteView: UIView {
         myQuizView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         myQuizView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         myQuizView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-    myQuizView.heightAnchor.constraint(equalTo:safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
+myQuizView.heightAnchor.constraint(equalTo:safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
+        myQuizView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
         
     }
     

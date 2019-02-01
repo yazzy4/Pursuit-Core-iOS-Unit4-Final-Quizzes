@@ -11,7 +11,7 @@ import UIKit
 class FavoriteQuizViewController: UIViewController {
 
     var quizInfo = [Quiz]()
-//    var favoriteView = FavoriteView() {
+    var favoriteView = FavoriteView() 
 //        didSet{
 //            DispatchQueue.main.async {
 //                self.favoriteView = self

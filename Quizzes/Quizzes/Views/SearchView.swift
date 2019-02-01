@@ -13,7 +13,7 @@ class SearchView: UIView {
     public lazy var searchQuizCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 400, height: 800)
-        layout.sectionInset = UIEdgeInsets.init(top: 50, left:10, bottom: 20, right: 10)
+        layout.sectionInset = UIEdgeInsets.init(top: 50, left:10, bottom: 50, right: 10)
         layout.scrollDirection = .vertical
         
         let cv = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
@@ -42,10 +42,11 @@ class SearchView: UIView {
     func setUpQuizCollectionView(){
         addSubview(searchQuizCollection)
         searchQuizCollection.translatesAutoresizingMaskIntoConstraints = false
-        searchQuizCollection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        searchQuizCollection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+        searchQuizCollection.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         searchQuizCollection.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
         searchQuizCollection.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true
-    searchQuizCollection.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
+        searchQuizCollection.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
         
     }
     

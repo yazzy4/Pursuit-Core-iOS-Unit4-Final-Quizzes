@@ -45,13 +45,13 @@ class SearchCollectionViewCell: UICollectionViewCell {
 func setAddButton() {
         addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-       addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-       addButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-        addButton.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -150).isActive = true
+       addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -900).isActive = true
+      addButton.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, constant: 0).isActive = true
+    addButton.leadingAnchor.constraint(equalTo:safeAreaLayoutGuide .leadingAnchor, constant: 300).isActive = true
+    addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -800).isActive = true
     }
-    
-        func addQuizName(){
+    func addQuizName(){
             addSubview(searchQuizLabel)
             searchQuizLabel.topAnchor.constraint(equalTo: addButton.bottomAnchor).isActive = true
             searchQuizLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
