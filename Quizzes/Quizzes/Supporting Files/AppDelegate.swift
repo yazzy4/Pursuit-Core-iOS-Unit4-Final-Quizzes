@@ -16,21 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-//    let VC = MainQuizViewController()
-//            let nav = UINavigationController.init(rootViewController: VC)
-//            nav.title = "Quizzes"
-//            let tab = UITabBarController()
-//            let search = SearchViewController()
-//            search.title = "Search"
-//            let create = CreateViewController()
-//            create.title = "Create"
-//            let profile = ProfileViewController()
-//            profile.title = "Profile"
-//            tab.viewControllers = [nav, search, create, profile]
-//            window = UIWindow(frame: UIScreen.main.bounds)
-//            window?.rootViewController = tab
-//            window?.makeKeyAndVisible()
-              return true
+    let VC = FavoriteQuizViewController()
+    let nav = UINavigationController.init(rootViewController: VC)
+    nav.title = "Quizzes"
+    let tab = UITabBarController()
+    let search = SearchViewController()
+    search.title = "Search"
+    let create = CreateViewController()
+    create.title = "Create"
+    let profile = ProfileViewController()
+    profile.title = "Profile"
+    tab.viewControllers = [nav, search, create, profile]
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = tab
+    window?.makeKeyAndVisible()
+    return true
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

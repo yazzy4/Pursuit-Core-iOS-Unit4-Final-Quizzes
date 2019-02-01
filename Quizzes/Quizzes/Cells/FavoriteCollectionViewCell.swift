@@ -1,5 +1,5 @@
 //
-//  QuizView.swift
+//  FavoriteCollectionViewCell.swift
 //  Quizzes
 //
 //  Created by Yaz Burrell on 2/1/19.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class QuizView: UIView {
-
+class FavoriteCollectionViewCell: UICollectionViewCell {
     
 }
