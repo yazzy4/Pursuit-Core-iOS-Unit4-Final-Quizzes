@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainQuizViewController: UIViewController {
 
+    var quizInfo = [Quiz]()
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    dump(quizInfo)
   }
 
 
