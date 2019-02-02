@@ -21,7 +21,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     public lazy var searchQuizLabel: UILabel = {
         let label = UILabel()
         label.text = "Quizes"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         label.textColor = .black
         label.isEnabled = true
         label.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
@@ -55,9 +55,10 @@ func setAddButton() {
     func addQuizName(){
             addSubview(searchQuizLabel)
         searchQuizLabel.translatesAutoresizingMaskIntoConstraints = false
-        searchQuizLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        searchQuizLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         searchQuizLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        searchQuizLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -150).isActive = true
+        searchQuizLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        searchQuizLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         searchQuizLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
         }
