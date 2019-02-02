@@ -10,17 +10,20 @@ import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
     
-    var setView = [Quiz]()
     
     public lazy var addButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+       button.setTitle(". . .", for: .normal)
         return button
     }()
     
     public lazy var searchQuizLabel: UILabel = {
         let label = UILabel()
         label.text = "Quizes"
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = .black
+        label.isEnabled = true
         label.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
         return label
     }()
@@ -45,18 +48,18 @@ class SearchCollectionViewCell: UICollectionViewCell {
 func setAddButton() {
         addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
-    addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -150).isActive = true
-       addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -900).isActive = true
-      addButton.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, constant: 0).isActive = true
-    addButton.leadingAnchor.constraint(equalTo:safeAreaLayoutGuide .leadingAnchor, constant: 300).isActive = true
-    addButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -800).isActive = true
+    addButton.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+       addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5).isActive = true
+      addButton.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
     }
     func addQuizName(){
             addSubview(searchQuizLabel)
-            searchQuizLabel.topAnchor.constraint(equalTo: addButton.bottomAnchor).isActive = true
-            searchQuizLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
-            searchQuizLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -11).isActive = true
-            safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+        searchQuizLabel.translatesAutoresizingMaskIntoConstraints = false
+        searchQuizLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        searchQuizLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        searchQuizLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -150).isActive = true
+        searchQuizLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
         }
     
     

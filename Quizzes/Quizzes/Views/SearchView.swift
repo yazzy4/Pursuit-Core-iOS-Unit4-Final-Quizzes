@@ -12,33 +12,36 @@ class SearchView: UIView {
     
     public lazy var searchQuizCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 400, height: 800)
-        layout.sectionInset = UIEdgeInsets.init(top: 50, left:10, bottom: 50, right: 10)
+        layout.itemSize = CGSize.init(width: 350, height: 500)
+        layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         layout.scrollDirection = .vertical
         
-        let cv = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
-        cv.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "QuizCell")
+        let cv = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
         cv.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
         return cv
     }()
+    
+    func setupCellViews(){
+    self.searchQuizCollection.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "QuizCell")
+        setUpQuizCollectionView()
+    }
     
    
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        commonInit()
+        setupCellViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    public func commonInit(){
-        setUpQuizCollectionView()
+        backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        setupCellViews()
         
     }
     
+  
     func setUpQuizCollectionView(){
         addSubview(searchQuizCollection)
         searchQuizCollection.translatesAutoresizingMaskIntoConstraints = false
