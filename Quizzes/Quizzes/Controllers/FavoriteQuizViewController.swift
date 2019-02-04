@@ -11,14 +11,14 @@ import UIKit
 class FavoriteQuizViewController: UIViewController {
 
     var quizInfo = [Quiz]()
-    var favoriteView = FavoriteView() 
+    var favoriteView = FavoriteView()
 //        didSet{
 //            DispatchQueue.main.async {
 //                self.favoriteView = self
 //            }
 //        }
-//    }
 //
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.addSubview(favoriteView)

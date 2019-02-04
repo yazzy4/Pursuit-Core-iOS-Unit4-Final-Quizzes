@@ -22,11 +22,12 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(searchView)
-        getQuizzes()
+        
+        navigationItem.title = "Search Quizes"
         searchView.searchQuizCollection.dataSource = self
         searchView.searchQuizCollection.delegate = self
-        navigationItem.title = "Search Quizes"
+        getQuizzes()
+         view.addSubview(searchView)
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         
@@ -55,18 +56,11 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! SearchCollectionViewCell
-        let quiz = quizInfo[indexPath.row]
-    
-        cell.searchQuizLabel.text = quiz.quizTitle
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
+        cell.searchQuizLabel.text = quizInfo[indexPath.row].quizTitle
         
         return cell
     }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
     
     
 }
